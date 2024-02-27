@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    let w = [
+        {a: 'hello'},
+        {b: 'owu'},
+        {c: 'com'},
+        {d: 'ua'},
+        {e: 1},
+        {f: 10},
+        {g: -999},
+        {h: 123},
+        {i: 3.14},
+        {j: 2.7}
+    ];
+    console.log(w);
+
+    let author1 = [
+        {name: 'JB', age: 38}
+    ];
+    let author2 = [
+        {name: 'BJ', age: 8}
+    ];
+    let author3 = [
+        {name: 'BiJimBim', age: 138}
+    ];
+    let books = [
+        {title: 'TopBook', pageCount: 150, genre: 'TopG', author1},
+        {title: 'MidBook', pageCount: 250, genre: 'MidG', author2},
+        {title: 'BotBook', pageCount: 340, genre: 'BotG', author3}
+    ];
+    console.log(books)
+
+    let a1 = 1;
+    let a2 = 0;
+    let a3 = -3;
+    if (a1 !== 0) {
+        document.write('<h2> a1 не равен нулю</h2>')
+    }
+    else {
+        document.write('<h2> a1 равен нулю</h2>')
+    }
+    if (a2 !== 0) {
+        document.write('<h2> a2 не равен нулю</h2>')
+    }
+    else {
+        document.write('<h2> a2 равен нулю</h2>')
+    }
+    if (a3 !== 0) {
+        document.write('<h2> a3 не равен нулю</h2>')
+    }
+    else {
+        document.write('<h2> a3 равен нулю</h2>')
+    }
+
+    let t1f4 = (60/4);
+    let t2f4 = (60/4*2);
+    let t3f4 = (60/4*3);
+    let time = 1;
+    if (time < 0 || time > 60) {
+        document.write('<h3>Err//wrong time num</h3>')
+    }
+    else {
+        if (time <= t1f4) {
+            document.write('<h3>Time 1/4</h3>')
+        }
+        if (time <= t2f4 && time > t1f4) {
+            document.write('<h3>Time 2/4</h3>')
+        }
+        if (time < t3f4 && time > t2f4) {
+            document.write('<h3>Time 3/4</h3>')
+        }
+        if (time > t3f4) {
+            document.write('<h3>Time 4/4</h3>')
+        }
+    }
+
+    let d1f3 = (3/3);
+    let d2f3 = (30/3*2);
+    let day = 31;
+    if (day <= 0 || day > 31) {
+        document.write('<h3>Err//wrong day num</h3>')
+    }
+    else {
+        if (day <= d1f3) {
+            document.write('<h3>Day 1/3</h3>')
+        }
+        if (day <= d2f3 && day > d1f3) {
+            document.write('<h3>Day 2/3</h3>')
+        }
+        if (day > d2f3) {
+            document.write('<h3>Day 3/3</h3>')
+        }
+    }
+
+    var user = parseInt(prompt("print your day:"));
+    if (isNaN(user)){
+        console.error('Ошибка! Day is not num');
+    } else {
+        if (user > 31 || user <= 0){
+            console.error('Ошибка! Wrong day');
+        } else{
+            switch (user) {
+                case 1: console.log('Today you go to work)'); break;
+                case 2: console.log('Today you go to work)'); break;
+                case 3: console.log('Today you go to work)'); break;
+                case 4: console.log('Today you go to work again'); break;
+                case 5: console.log('Today you go to work again'); break;
+                case 6: console.log('Today you go to work again'); break;
+                case 7: console.log('Today you go to work again('); break;
+                case 8: console.log('Today you go to work again('); break;
+                case 9: console.log('Today you go to work again('); break;
+                case 10: console.log('Actually you have to go to work today('); break;
+                case 11: console.log('Actually you have to go to work today('); break;
+                case 12: console.log('Actually you have to go to work today('); break;
+                case 13: console.log('Actually you have to go to work today sorry'); break;
+                case 14: console.log('Actually you have to go to work today sorry'); break;
+                case 15: console.log('Actually you have to go to work today sorry'); break;
+                case 16: console.log('...'); break;
+                case 17: console.log('...'); break;
+                case 18: console.log('...'); break;
+                case 19: console.log("I'm sorry"); break;
+                case 20: console.log("I'm sorry"); break;
+                case 21: console.log("I'm sorry"); break;
+                case 22: console.log("oh men"); break;
+                case 23: console.log("oh men"); break;
+                case 24: console.log("oh men"); break;
+                case 25: console.log("-_-"); break;
+                case 26: console.log("-_-"); break;
+                case 27: console.log("-_-"); break;
+                case 28: console.log("T-T"); break;
+                case 29: console.log("T-T"); break;
+                case 30: console.log("T-T"); break;
+                case 31: console.log("X_X"); break;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
+
+<!--Масиви та об'єкти:-->
+<!-- - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен-->
+<!--елемент в консоль-->
+<!-- - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.-->
+<!-- - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre,-->
+<!--authors. Поле "автори" - являється  масивом. Кожен автор має поля name та age.-->
+<!-- - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name,-->
+<!--username,password. Вивести в консоль пароль кожного користувача-->
+
+
+<!--Логічні розгалуження:-->
+<!-- - Є змінна х, якій ви надаєте довільне числове значення.-->
+<!--Якщо змінна x не дорівнює нулю, виведіть 'Вірно', інакше виведіть 'Невірно'.-->
+<!--Перевірте  скрипт при a, що дорівнює 1, 0, -3-->
+<!-- - Дано змінну time яка рівна числу від 0 до 59. Потрібно написати код, який-->
+<!--перевірить, до якої четверті години попадає число-->
+<!--(в першу, другу, третю или четверту частину години).-->
+<!-- - У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку-->
+<!--половину(декаду) місяця потрапляє це число (у першу, другу чи третю).-->
+<!-- - Скласти розклад на тиждень за домопоги switch. Користувач вводить порядковий-->
+<!--номер дня тижня і на екрані відображається інфа що заплановано на цей день (можна-->
+<!--замість плану на день, назву дня англійською).-->
+<!-- - Користувач вводить або має два числа.-->
+<!--Потрібно знайти та вивести максимальне число з тих двох .-->
+<!--Також потрібно врахувати коли введені рівні числа.-->
+
+<!-- - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null-->
+<!--і тд включно). Напишіть код який,-->
+<!--за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо-->
+<!--значення змінної х являється falsy (хибноподібні, тобто приводиться до false)-->
+
+
+<!-- - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray.-->
+<!--За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо-->
+<!--тривалість довша за 5 місяців вивести в консоль "Супер".-->
