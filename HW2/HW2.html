@@ -122,18 +122,18 @@
                 case 10: console.log('Actually you have to go to work today('); break;
                 case 11: console.log('Actually you have to go to work today('); break;
                 case 12: console.log('Actually you have to go to work today('); break;
-                case 13: console.log('Actually you have to go to work today sorry'); break;
-                case 14: console.log('Actually you have to go to work today sorry'); break;
-                case 15: console.log('Actually you have to go to work today sorry'); break;
+                case 13: console.log('Actually you have to go to work today, sorry'); break;
+                case 14: console.log('Actually you have to go to work today, sorry'); break;
+                case 15: console.log('Actually you have to go to work today, sorry'); break;
                 case 16: console.log('...'); break;
                 case 17: console.log('...'); break;
                 case 18: console.log('...'); break;
                 case 19: console.log("I'm sorry"); break;
                 case 20: console.log("I'm sorry"); break;
                 case 21: console.log("I'm sorry"); break;
-                case 22: console.log("oh men"); break;
-                case 23: console.log("oh men"); break;
-                case 24: console.log("oh men"); break;
+                case 22: console.log("oh men..."); break;
+                case 23: console.log("oh men..."); break;
+                case 24: console.log("oh men..."); break;
                 case 25: console.log("-_-"); break;
                 case 26: console.log("-_-"); break;
                 case 27: console.log("-_-"); break;
@@ -144,6 +144,34 @@
             }
         }
     }
+
+    var n1 = parseInt(prompt("First num:"));
+    var n2 = parseInt(prompt("Second num:"));
+    let n1n = true;
+    let n2n = true;
+    if (isNaN(n1)){console.error('Ошибка! First num is not num'); n1n = false}
+    if (isNaN(n2)){console.error('Ошибка! Second num is not num'); n2n = false}
+    else {
+        if (n1n !== false || n2n !== false) {
+            if (n1 > n2) {
+                console.log(n1)
+            } else {
+                if (n2 > n1) {
+                    console.log(n2)
+                } else {
+                    if (n1 === n2)
+                        console.log('n1=n2')
+                }
+            }
+        }
+    }
+
+    var x = (prompt('Введите Х для последнего задания'));
+    if (!x) {
+        x = "default";
+    }
+    console.log(x);
+
 
 </script>
 </body>
