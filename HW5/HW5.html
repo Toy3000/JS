@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    let prktnk = [ a = 3, b = 5]
+    let kolo = [rk = 4]
+    let cel = [ h = 7, rc = 2]
+    // ---------------------------------------------------
+    let prkf = {
+        greeting: () => {
+            let Sp = a * b
+            console.log(Sp)
+        }
+    }
+    let kolof = {
+        greeting: () => {
+            let Sk = Math.PI * rk ** 2
+            console.log(Sk)
+        }
+    }
+    let celf = {
+        greeting: () => {
+            let Sc = Math.PI * rc ** 2 * h
+            console.log(Sc)
+        }
+    }
+    prkf.greeting()
+    kolof.greeting()
+    celf.greeting()
+    // ----------------------------------------------------
+    let mas = [
+        {name: 'etan', age: 21, status: true, id: 1},
+        {name: 'sem', age: 22, status: false, id: 2},
+        {name: 'john', age: 23, status: true, id: 3}
+    ]
+    // -----------------------------------------------------
+    function fmas() {
+        for (let user of mas){
+            console.log(user)
+        }
+    }
+    fmas()
+    let fpar = {
+        greeting: (name, age, status) => {
+            document.write(`
+        <div><h2> name - ${name}, age - ${age}, status - ${status}. </h2></div>
+        `);
+        }
+    }
+    fpar.greeting('sara', 32, false)
+    let ulf = {
+        greeting: (human) => {
+            document.write(`<ul>`);
+            for (let i = 0; i < 3; i++)
+                document.write(`<li> ты мог быть ${human} </li>`)
+            document.write(`</ul>`);
+        }
+    }
+    ulf.greeting('человеком');
+    let maslif = {
+        greeting: () => {
+            document.write(`<ul>`);
+            for (let users of mas) {
+                document.write(`<li> ${users.name} ${users.age} ${users.status} </li>`)
+            }
+            document.write(`</ul>`);
+        }
+    }
+    maslif.greeting()
+    let masdivf = {
+        greeting: () => {
+            for (let userid of mas) {
+                document.write(`
+            <div>
+            <h2>${userid.id} ${userid.name} ${userid.age}</h2>
+            </div>
+            `)
+                // тут два варианта вывода, не знаю какой из них больше подойдёт под решение задачи.
+                // document.write(`
+                // <div>
+                // <h2>${userid.id}</h2>
+                // </div>
+                // <div>
+                // <h2>${userid.name}</h2>
+                // </div>
+                // <div>
+                // <h2>${userid.age}</h2>
+                // </div>
+                // `)
+            }
+        }
+    }
+    masdivf.greeting();
+    let numf = {
+        greeting: () => {
+            let num = 100;
+            for (let u = 0; u < mas.length; u++) {
+                if (num > mas[u].age) {
+                    num = mas[u].age;
+                }
+            }
+            console.log(num);
+        }
+    }
+    numf.greeting()
+    let arr = {
+        greeting: () => {
+            let sum = 0;
+            for (let q = 0; q < mas.length; q++) {
+                sum = mas[q].age + sum
+            }
+            console.log(sum)
+        }
+    }
+    arr.greeting();
+    let swap = {
+        greeting: (arr, index1, index2)=>{
+        if (index1 < 0 || index2 < 0 || index1 >= arr.length || index2 >= arr.length) {
+            console.log("Індекси виходять за межі масиву.");
+            return arr;
+        }
+        let temp = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = temp;
+        return arr;
+    }
+    }
+    console.log(swap.greeting([11,22,33,44],0,1));
+    // let sumUAH = 10000;
+    let obmin = {
+        greeting: (sumUAH, currency, value) => {
+            let sumob = sumUAH / value
+            document.write(`<div>
+                        <h2> С вашей суммой в: ${sumUAH}UAH, по курсу ${currency}, что на
+                        сегодня = 1${currency}/${value}UAH, вы получите ${sumob}${currency}. </h2>
+                        </div>`)
+        }
+    }
+    obmin.greeting(10000, 'USD', 40)
+    obmin.greeting(21000, 'EUR', 42)
+    obmin.greeting(15000, 'JPY', 0.25)
+
+</script>
+
+</body>
+</html>
