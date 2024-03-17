@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//=========================================================================
+//- Створити функцію конструктор для об'єктів User з полями id, name, surname ,
+// email, phone
+// створити пустий масив, наповнити його 10 об'єктами new User(....)
+function User(id, name, surname, email, phone){
+        this.id = id; // я очень долго пытался автоматизировать выдачу айди для масива, но не получилось
+        this.name = name.charAt(0).toUpperCase() + name.slice(1);
+        this.surname = surname.charAt(0).toUpperCase() + surname.slice(1);
+        this.email = email + ('@gmail.com');
+        this.phone = ('+38') + phone;
+}
+let users = [
+    new User(1, 'иван', 'бубнов', 'bubi', '0547582945'),
+    new User(2, 'андрей', 'жубов', 'andjub', '0762154343'),
+    new User(3, 'олег', 'горев', 'ogo', '0988787112'),
+    new User(4, 'сергей', 'мартов', 'mars', '0863354232'),
+    new User(5, 'пётр', 'старый', 'oldp', '0849322323'),
+    new User(6, 'вдадимир', 'горов', 'vgoorov', '0946311521'),
+    new User(7, 'евгений', 'бондарь', 'bone', '0964453753'),
+    new User(8, 'георгий', 'торин', 'tor', '0998789431'),
+    new User(9, 'афанасий', 'рюрик', 'ruraf', '0776577385'),
+    new User(10, 'иммануил', 'мячев', 'immiach', '0876684637')
+]
+console.log(users)
+//=========================================================================
+// - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з
+// парними id (filter)
+let filter1 = users.filter((User)=>User.id%2===0)
+console.log(filter1)
+//=========================================================================
+//- Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+let sort1 = users.sort((firstObj,neighbor)=> {
+    return neighbor.id - firstObj.id;})
+//массив итак біл правельно отсортирован, я решил отсортировать его на спад
+console.log(sort1)
+//=========================================================================
+//- створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом
+// зі списком товарів)
+// створити пустий масив, наповнити його 10 об'єктами Client
+class Client {
+    constructor(id, name, surname, email, phone, order) {
+        this.id = id;
+        this.name = name.charAt(0).toUpperCase() + name.slice(1);
+        this.surname = surname.charAt(0).toUpperCase() + surname.slice(1);
+        this.email = email + ('@gmail.com');
+        this.phone = ('+38') + phone;
+        this.order = order;
+    }
+}
+let clients = [
+    new Client(1, 'иван', 'бубнов', 'bubi', '0547582945', 3),
+    // new Client(11, 'иван', 'бубнов', 'bubi', '0547582945', [milk, voter, eggs]),
+    new Client(2, 'андрей', 'жубов', 'andjub', '0762154343', 15),
+    new Client(3, 'олег', 'горев', 'ogo', '0988787112', 12),
+    new Client(4, 'сергей', 'мартов', 'mars', '0863354232', 33),
+    new Client(5, 'пётр', 'старый', 'oldp', '0849322323', 6),
+    new Client(6, 'вдадимир', 'горов', 'vgoorov', '0946311521', 7),
+    new Client(7, 'евгений', 'бондарь', 'bone', '0964453753', 5),
+    new Client(8, 'георгий', 'торин', 'tor', '0998789431', 7),
+    new Client(9, 'афанасий', 'рюрик', 'ruraf', '0776577385', 22),
+    new Client(10, 'иммануил', 'мячев', 'immiach', '0876684637', 19)
+]// не понял как добавить масив товаров в масив клиентов, и ещё и сортировать по нему потом
+console.log(clients)
+//=========================================================================
+//- Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order
+//по зростанню. (sort)
+let sort2 = clients.sort((firstObj,neighbor)=> {
+    return firstObj.order - neighbor.order;})
+console.log(sort2)
+//=========================================================================
+// - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник,
+// рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+// -- changeYear (newValue) - змінює рік випуску на значення newValue
+// -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в
+// поточний об'єкт car
+function Car(model, firm, year, speed, V){
+    this.model = model;
+    this.firm = firm;
+    this.year = year;
+    this.speed = speed;
+    this.V = V;
+    // this.drive = function(){
+    //     console.log('sasas' + this.speed)
+    // не получилось
+
+}
+let cars = [
+    new Car('Passat', 'Volkswagen', '2017', '260', '1.97'),
+    new Car('Ceed', 'Kia', '2023', '240', '1.6'),
+    new Car('Camry', 'Toyota', '2015', '140', '2.5'),
+    new Car('A7', 'Audi', '2014', '180', '3'),
+    new Car('CR-V', 'Honda', '2015', '140', '2.4')
+]
+console.log(cars)
+//=========================================================================
+//     -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+
+function drive(cars){
+    console.log('asd ' + cars.speed + ' asd')
+}
+drive(cars[0])
+//=========================================================================
+// -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+
+// function info(cars) {
+//     console.log(this.Car)
+// }
+// console.log(cars[1])
+
+// console.log(Car[1].join('.'))
+
+function info(cars){
+    console.log('Модель - '+cars.model+', производитель - '+cars.firm+
+        ', год выпуска - '+cars.year+', максимальная скорость - '+
+        cars.speed+', объём двигателя - '+cars.V)}
+info(cars[1])
+//=========================================================================
+// -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+//
+// function chmaxspeed(cars){
+//     let car2 = cars[2]// костыль
+//     let splice = car2.splice(4, '330')
+//     console.log(splice)
+// }
+// chmaxspeed(cars)
+
+// function maxsp(cars){
+//     let
+// }
+//=========================================================================
+</script>
+</body>
+</html>
