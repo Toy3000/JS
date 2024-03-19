@@ -81,61 +81,64 @@ console.log(sort2)
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в
 // поточний об'єкт car
-function Car(model, firm, year, speed, V){
+function Car(model, firm, year, speed, V) {
     this.model = model;
     this.firm = firm;
     this.year = year;
     this.speed = speed;
     this.V = V;
-    // this.drive = function(){
-    //     console.log('sasas' + this.speed)
-    // не получилось
-
+    this.drive = function () {
+        console.log('їдемо зі швидкістю ' + this.speed + ' на годину')}
+    this.info = function () {
+        console.log('Модель - '+this.model+', производитель - '+this.firm+
+        ', год выпуска - '+this.year+', максимальная скорость - '+
+        this.speed+', объём двигателя - '+this.V)}
+    this.increaseMaxSpeed = function (newSpeed) {
+        console.log('Максимальная скорость - '+newSpeed)}
+    this.changeYear = function (newValue) {
+        console.log('Год выпуска - '+newValue)}
+    // this.addDriver = function (driver){      //не понял как добавить
+    //     let newDriver = car.concat(users[1])
+    //     console.log(car)
 }
-let cars = [
-    new Car('Passat', 'Volkswagen', '2017', '260', '1.97'),
-    new Car('Ceed', 'Kia', '2023', '240', '1.6'),
-    new Car('Camry', 'Toyota', '2015', '140', '2.5'),
-    new Car('A7', 'Audi', '2014', '180', '3'),
-    new Car('CR-V', 'Honda', '2015', '140', '2.4')
-]
-console.log(cars)
-//=========================================================================
-//     -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+let car =  new Car('Passat', 'Volkswagen', '2017', '260', '1.97')
 
-function drive(cars){
-    console.log('asd ' + cars.speed + ' asd')
+car.drive.call(car)
+car.info.call(car)
+car.increaseMaxSpeed.apply(car, [333])
+car.changeYear.call(car, [1997])
+// car.addDriver.call(car)
+
+// //=========================================================================
+
+class Car2 {
+    constructor(model, firm, year, speed, V) {
+        this.model = model;
+        this.firm = firm;
+        this.year = year;
+        this.speed = speed;
+        this.V = V;
+        this.drive = function () {
+            console.log('їдемо зі швидкістю ' + this.speed + ' на годину')
+        }
+        this.info = function () {
+            console.log('Модель - ' + this.model + ', производитель - ' + this.firm +
+                ', год выпуска - ' + this.year + ', максимальная скорость - ' +
+                this.speed + ', объём двигателя - ' + this.V)
+        }
+        this.increaseMaxSpeed = function (newSpeed) {
+            console.log('Максимальная скорость - ' + newSpeed)
+        }
+        this.changeYear = function (newValue) {
+            console.log('Год выпуска - ' + newValue)
+        }
+    }
 }
-drive(cars[0])
-//=========================================================================
-// -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
-
-// function info(cars) {
-//     console.log(this.Car)
-// }
-// console.log(cars[1])
-
-// console.log(Car[1].join('.'))
-
-function info(cars){
-    console.log('Модель - '+cars.model+', производитель - '+cars.firm+
-        ', год выпуска - '+cars.year+', максимальная скорость - '+
-        cars.speed+', объём двигателя - '+cars.V)}
-info(cars[1])
-//=========================================================================
-// -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
-//
-// function chmaxspeed(cars){
-//     let car2 = cars[2]// костыль
-//     let splice = car2.splice(4, '330')
-//     console.log(splice)
-// }
-// chmaxspeed(cars)
-
-// function maxsp(cars){
-//     let
-// }
-//=========================================================================
+let car2 =  new Car('Passat', 'Volkswagen', '2017', '260', '1.97')
+car2.drive.call(car2)
+car2.info.call(car2)
+car2.increaseMaxSpeed.apply(car2, [111])
+car2.changeYear.call(car2, [1897])
 </script>
 </body>
 </html>

@@ -102,7 +102,47 @@
          { cardSuit: 'clubs', value: 'king', color: 'black' },
          { cardSuit: 'clubs', value: 'ace', color: 'black' },
      ]
-     function asd() {}
-     cards.forEach(asd)
+     // console.log(cards)
+     let filtSpadAce = cards.filter((card) => card.cardSuit === 'spade' && card.value === 'ace')
+     let filt6 = cards.filter((card) => card.value === '6')
+     let filtRed = cards.filter((card) => card.color === 'red')
+     let filtD = cards.filter((card) => card.cardSuit === 'diamond')
+     let filtCl = cards.filter((card) => card.cardSuit === 'clubs' && card.value !== '6'&& card.value !=='7'&& card.value !=='8')
+     console.log(filtSpadAce)
+     console.log(filt6)
+     console.log(filtRed)
+     console.log(filtD)
+     console.log(filtCl)
+//      ============================================================
+//      Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
+//      {
+//          spades:[],
+//              diamonds:[],
+//          hearts:[],
+//          clubs:[]
+//      }
+     // не получилось их правильно расставить по местам, все лезут в одну
+     let reduce = cards.reduce(
+         (acc, card) => {
+             if (cards.filter((card) => card.cardSuit === 'spade')) {
+                 acc[0].push(card)
+             } else {
+                 if (cards.filter((card) => card.cardSuit === 'diamonds')) {
+                     acc[1].push(card)
+                 } else {
+                     if (cards.filter((card) => card.cardSuit === 'hearts')) {
+                         acc[2].push(card)
+                     } else {
+                         if (cards.filter((card) => card.cardSuit === 'clubs')) {
+                             acc[3].push(card)
+                         }
+                     }
+                 }
+             }
+             return acc
+         },
+     [[],[],[],[]]
+     )
+     console.log(reduce)
 </script>
 </html>
