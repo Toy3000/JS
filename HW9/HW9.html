@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .warp{
+            color: gray;
+        /*    не отображаеться цвет ( */
+        }
+        .collapse{
+            margin: 3px;
+        }
+        .alpha{
+            width: 10vw;
+            height: 10vh;
+        }
+        .beta{
+            font-size: 3vh;
+        }
+    </style>
+</head>
+<body>
+<ul class="aar"></ul>
+<div class="courses"></div>
+<script>
+//- створити блок, +
+//- додати йому класи wrap, collapse, alpha, beta +
+//- додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту +
+//- додати цей блок в body. +
+//- клонувати його повністю, та додати клон в body. ? НЕ ПОНЯЛ
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    // div.classList.add('wrap', 'collapse', 'alpha', 'beta')
+    div.classList.add('wrap')
+    div.classList.add('collapse')
+    div.classList.add('alpha')
+    div.classList.add('beta')
+//- Є масив: +
+//['Main','Products','About us','Contacts'] +
+//Зробити ul в середині якої будуть лежати елементи масиву (кожен в своєму li) +
+    const arrayBlock = document.getElementsByClassName('aar')[0]
+    let arrayList = ['Main','Products','About us','Contacts']
+    // document.write(`<ul>`)
+    let i = 0
+        for (const array of arrayList){
+            let li = document.createElement('li')
+            li.classList.add('aarR')
+            arrayBlock.appendChild(li) // если не выставлен номер элемента в 44 чтроке то вылазит ошибка в этой строке, почему?
+            let h3 = document.createElement('h3')
+            h3.innerText = `${arrayList[i]}`
+            li.appendChild(h3)
+            i++
+        }
+    // document.write(`<ul>`)
+// - Є масив +
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+// Для кожного елементу масиву зробити блок в якому вивести інформацію про title
+// та monthDuration. Завдання робити через цикли. +
+const courses = document.getElementsByClassName('courses')[0]
+let coursesAndDurationArray = [
+    {title: 'JavaScript Complex', monthDuration: 5},
+    {title: 'Java Complex', monthDuration: 6},
+    {title: 'Python Complex', monthDuration: 6},
+    {title: 'QA Complex', monthDuration: 4},
+    {title: 'FullStack', monthDuration: 7},
+    {title: 'Frontend', monthDuration: 4}
+];
+let u = 0
+for (const array of coursesAndDurationArray){
+    let div = document.createElement('div')
+    div.classList.add('item1')
+    courses.appendChild(div)
+    let h3 = document.createElement('h3')
+    h3.innerText = `Курс - ${coursesAndDurationArray[u].title}, длительность - ${coursesAndDurationArray[u].monthDuration}`
+    div.appendChild(h3)
+    u++
+}
+//За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,
+//в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'>
+//з monthDuration елементу. Завдання робити через цикли.
+const div2 = document.createElement('div');
+document.body.appendChild(div2);
+div2.classList.add('item')
+const item = document.getElementsByClassName('item')[0]
+let y = 0
+for (const array of coursesAndDurationArray){
+    let div = document.createElement('div')
+    div.classList.add('item')
+    item.appendChild(div)
+    let h1 = document.createElement('h1')
+    h1.classList.add('heading')
+    let p = document.createElement('p')
+    p.classList.add('description')
+    h1.innerText = `Курс - ${coursesAndDurationArray[y].title}`
+    p.innerText = `Длительность - ${coursesAndDurationArray[y].monthDuration}`
+    div.append(h1,p)
+        y++
+        }
+// с симпмонами не делал по причине не віхода компьютера в интернет. проверите работу скажите верите лм что тема понята,
+// можно ли скипнуть задание с симпсонами?
+</script>
+</body>
+</html>
