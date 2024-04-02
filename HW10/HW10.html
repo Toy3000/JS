@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.divSt{*/
+        /*    width: 100px;*/
+        /*    height: 100px;*/
+        /*}*/
+        /*.h2St{*/
+        /*    text-align: center;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<form action="/asd" name="form1">
+    <input type="name" name="name">
+    <input type="surname" name="surname">
+    <input type="age" name="age">
+    <button>send</button>
+</form>
+<div class="divSt">
+    <h2 class="h2St" id="h2"></h2>
+    <h2 class="h2St" id="h22"></h2>
+    <h2 class="h2St" id="h222"></h2>
+</div>
+<script>
+//Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати
+//данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку,
+//під формою з'явився блок з вашим об'єктом
+let form1 = document.forms['form1']
+let inputName = form1.name
+let inputSurname = form1.surname
+let inputAge = form1.age
+let h2 = document.getElementById('h2')
+let h22 = document.getElementById('h22')
+let h222 = document.getElementById('h222')
+inputName.value = 'kokos'
+inputSurname.value = 'ananas'
+inputAge.value = '2'
+console.log(inputName)
+// inputName.oninput = function (){
+//     h2.innerText = this.value
+// }
+form1.onsubmit = function (e){
+    e.preventDefault()
+    h2.innerText = inputName.value
+    h22.innerText = inputSurname.value
+    h222.innerText = inputAge.value
+}
+
+
+//є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені
+//сторінки буде додавати до неї +1
+let i = (0)
+// я не понимаю как єто сделать, подсказок в видео не нашёл
+
+</script>
+</body>
+</html>
